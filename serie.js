@@ -7,15 +7,13 @@ let crearSerie = (cantidad) => {
     return new Promise((resolve, reject) => {
         let fibo1 = 1;
         let fibo2 = 1;
-        let serie = [];
+        let serie = '';
 
-        console.log(`${fibo1}`);
 
-        for (let i = 2; i < cantidad; i++) {
+        for (let i = 2; i <= cantidad; i++) {
             serie += `${fibo2}\n`;
             fibo2 = fibo1 + fibo2;
             fibo1 = fibo2 - fibo1;
-            console.log(`${fibo2}`);
         }
 
         fs.writeFile('message.txt', serie, (err) => {
