@@ -2,7 +2,7 @@
 // * 1 1 2 3 5 8 13 21 34 ... 
 const fs = require('fs');
 
-let crearSerie = () => {
+let crearSerie = (cantidad) => {
 
     return new Promise((resolve, reject) => {
         let fibo1 = 1;
@@ -11,7 +11,7 @@ let crearSerie = () => {
 
         console.log(`${fibo1}`);
 
-        for (let i = 2; i <= 10; i++) {
+        for (let i = 2; i < cantidad; i++) {
             serie += `${fibo2}\n`;
             fibo2 = fibo1 + fibo2;
             fibo1 = fibo2 - fibo1;
